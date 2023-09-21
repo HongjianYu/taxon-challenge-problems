@@ -1,0 +1,10 @@
+fabricatesMetal
+handleTallFeatures
+machineIsAdditive
+materialOnlyIntersectsVoids
+materialMatchMachine
+nonemptyBlocks
+stayInWe
+toolMatchesRegion
+ventilateLiquidBeforeNextLayer
+weLargerThan

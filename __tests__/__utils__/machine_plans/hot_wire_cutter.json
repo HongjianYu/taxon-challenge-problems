@@ -1,0 +1,99 @@
+{
+    "name": "hot wire cutter (2dof)",
+    "metrics": {
+        "workEnvelope": {
+            "shape": "rectangle",
+            "dimensions" : {
+                "width": 400,
+                "height": 175,
+                "length": 0
+            },
+            "position": {
+                "x": 0,
+                "y": 112.5,
+                "z": 0
+            }
+        },
+        "manufacturingStrategies": [
+            "subtractive"
+        ],
+        "materialCompatibility": {
+            "include": [
+                "foam"
+            ],
+            "exclude": [
+                "wood", "metal", "plastic", "paper"
+            ]
+        }
+    },
+    "blocks": [
+        {
+            "name": "doubleLeadscrewPlatform",
+            "blockType": "redundantLinear",
+            "actuationAxes": [ "x" ],
+            "dimensions": {
+                "width": 400,
+                "height": 25,
+                "length": 300
+            },
+            "void": {
+                "width": 200,
+                "height": 25,
+                "length": 400
+            },
+            "position": {
+                "x": 0,
+                "y": 12.5,
+                "z": 0
+            },
+            "connections": [
+                {
+                    "child": "verticalWireHolder",
+                    "offset": {
+                        "x": -187.5,
+                        "y": -112.5,
+                        "z": 0
+                    }
+                }
+            ]
+        },
+        {
+            "name": "verticalWireHolder",
+            "blockType": "redundantLinear",
+            "actuationAxes": [ "y" ],
+            "dimensions": {
+                "width": 25,
+                "height": 200,
+                "length": 300
+            },
+            "void": {
+                "width": 25,
+                "height": 200,
+                "length": 200
+            },
+            "connections": [
+                {
+                    "child": "wire",
+                    "offset": {
+                        "x": 0,
+                        "y": 95,
+                        "z": 0
+                    }
+                }
+            ]
+        },
+        {
+            "name": "wire",
+            "blockType": "nonActuating",
+            "isTool": true,
+            "dimensions": {
+                "width": 5,
+                "height": 5,
+                "length": 200
+            },
+            "attributes": {
+                "toolType": "wire"
+            }
+        }
+    ]
+}

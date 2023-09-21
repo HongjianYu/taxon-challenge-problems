@@ -1,0 +1,5 @@
+{
+    "name": "materialOnlyIntersectsVoids",
+    "type": "action",
+    "description": "material only intersects voids"
+}

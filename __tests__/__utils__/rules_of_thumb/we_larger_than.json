@@ -1,0 +1,7 @@
+{
+    "name": "weLargerThan",
+    "isDependent": true,
+    "type": "filtering",
+    "description": "w.e. larger than"
+}
+

@@ -1,0 +1,14 @@
+{
+  "rulesOfThumb":[
+    {"name":"fabricatesMetal","type":"filtering","description":"machine fabricates metal"},
+    {"name":"handleTallFeatures","type":"filtering","description":"machine handles tall features"},
+    {"name":"machineIsAdditive","type":"filtering","description":"machine is additive"},
+    {"name":"materialOnlyIntersectsVoids","type":"action","description":"material only intersects voids"},
+    {"name":"materialMatchMachine","type":"action","description":"material matches machine"},
+    {"name":"nonemptyBlocks","type":"filtering","description":"non-empty blocks"},
+    {"name":"stayInWe","type":"action","description":"tool stays in w.e."},
+    {"name":"toolMatchesRegion","type":"action","description":"tool matches region"},
+    {"name":"ventilateLiquidBeforeNextLayer","type":"action","description":"dry liquid before next layer"},
+    {"name":"weLargerThan","isDependent":true,"type":"filtering","description":"w.e. larger than"}
+  ]
+}

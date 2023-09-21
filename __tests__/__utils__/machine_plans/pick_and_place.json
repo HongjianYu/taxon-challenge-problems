@@ -1,0 +1,259 @@
+{
+    "name": "pcb pick and place",
+    "metrics": {
+        "workEnvelope": {
+            "shape": "rectangle",
+            "dimensions" : {
+                "width": 570,
+                "height": 0,
+                "length": 370
+            },
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            }
+        },
+        "envelopeRegions": {
+            "0402": {
+                "shape": "rectangle",
+                "dimensions" : {
+                    "width": 50,
+                    "height": 0,
+                    "length": 50
+                },
+                "position": {
+                    "x": 200,
+                    "y": 0,
+                    "z": -100
+                }
+            },
+            "0603": {
+                "shape": "rectangle",
+                "dimensions" : {
+                    "width": 50,
+                    "height": 0,
+                    "length": 50
+                },
+                "position": {
+                    "x": 200,
+                    "y": 0,
+                    "z": 0
+                }
+            },
+            "SOIC": {
+                "shape": "rectangle",
+                "dimensions" : {
+                    "width": 50,
+                    "height": 0,
+                    "length": 50
+                },
+                "position": {
+                    "x": 200,
+                    "y": 0,
+                    "z": 100
+                }
+            }
+        },
+        "footprint": {
+            "width": 1000,
+            "length": 650
+        },
+        "manufacturingStrategies": [
+            "nonManufacturing"
+        ],
+        "materialCompatibility": {
+            "include": [
+                "pcb"
+            ],
+            "exclude": [
+                "wood", "metal", "plastic", "clay", "paper"
+            ]
+        },
+        "metafeatures": {
+            "version": 2.0,
+            "machineType": "pickAndPlace",
+            "vendorInfo": {
+                "price": 1799,
+                "website": "https://liteplacer.com/",
+                "numUsers" : 5000
+            }
+        }
+    },
+    "blocks": [
+        {
+            "name": "doubleRailLowerWithAxle",
+            "blockType": "linear",
+            "actuationAxes": [ "x" ],
+            "dimensions": {
+                "width": 920,
+                "height": 180,
+                "length": 540
+            },
+            "position": {
+                "x": 0,
+                "y": 90,
+                "z": 0
+            },
+            "attributes": {
+                "driveType": "timingBelt",
+                "stepDisplacementRatio": 0.5
+            },
+            "connections": [
+                {
+                    "child": "crossbarAssembly",
+                    "offset": {
+                        "x": 0,
+                        "y": -135,
+                        "z": 0
+                    }
+                }
+            ]
+        },
+        {
+            "name": "crossbarAssembly",
+            "blockType": "linear",
+            "actuationAxes": [ "z" ],
+            "dimensions": {
+                "width": 90,
+                "height": 90,
+                "length": 540
+            },
+            "attributes": {
+                "driveType": "timingBelt",
+                "stepDisplacementRatio": 0.5
+            },
+            "connections": [
+                {
+                    "child": "gantryAssembly",
+                    "offset": {
+                        "x": 22.5,
+                        "y": -45,
+                        "z": 0
+                    }
+                }
+            ]
+        },
+        {
+            "name": "gantryAssembly",
+            "blockType": "binary",
+            "actuationAxes": [ "y" ],
+            "dimensions": {
+                "width": 135,
+                "height": 180,
+                "length": 90
+            },
+            "attributes": {
+                "driveType": "timingBelt",
+                "stepDisplacementRatio": 0.5
+            },
+            "connections": [
+                {
+                    "child": "pickAndPlaceHead",
+                    "offset": {
+                        "x": 90,
+                        "y": 50,
+                        "z": 0
+                    }
+                }
+            ]
+        },
+        {
+            "name": "pickAndPlaceHead",
+            "blockType": "nonActuating",
+            "dimensions": {
+                "width": 45,
+                "height": 135,
+                "length": 90
+            },
+            "attributes": {
+            },
+            "connections": [
+                {
+                    "child": "needleHolder",
+                    "offset": {
+                        "x": 0,
+                        "y": 55,
+                        "z": 0
+                    }
+                }
+            ]
+        },
+        {
+            "name": "needleHolder",
+            "isTool": true,
+            "blockType": "nonActuating",
+            "attributes": {
+                "toolType": "pnpHolder"
+            },
+            "dimensions": {
+                "width": 10,
+                "height": 135,
+                "length": 10
+            },
+            "connections": [
+                {
+                    "child": "needle0402",
+                    "offset": {
+                        "x": 0,
+                        "y": 115,
+                        "z": 0
+                    }
+                }
+            ]
+        },
+        {
+            "name": "needle0402",
+            "isTool": true,
+            "blockType": "nonActuating",
+            "attributes": {
+                "toolType": "needle",
+                "pcbSize": "0402",
+                "equipped": true
+            },
+            "dimensions": {
+                "width": 10,
+                "height": 100,
+                "length": 10
+            }
+        },
+        {
+            "name": "needle0603",
+            "isTool": true,
+            "blockType": "nonActuating",
+            "attributes": {
+                "toolType": "needle",
+                "pcbSize": "0603"
+            },
+            "dimensions": {
+                "width": 10,
+                "height": 100,
+                "length": 10
+            },
+            "position": {
+                "x": -200,
+                "y": 50,
+                "z": 0
+            }
+        },
+        {
+            "name": "needleSOIC",
+            "isTool": true,
+            "blockType": "nonActuating",
+            "attributes": {
+                "toolType": "needle",
+                "pcbSize": "0603"
+            },
+            "dimensions": {
+                "width": 10,
+                "height": 100,
+                "length": 10
+            },
+            "position": {
+                "x": -200,
+                "y": 50,
+                "z": 15
+            }
+        }
+    ]
+}
