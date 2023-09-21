@@ -1,8 +1,3 @@
----
-title: "Taxon Challenge Problems"
-author: "Jay Yu"
----
-
 # Taxon Challenge Problems
 
 This project contains solutions to the two problems described [here](https://www.jasperoleary.com/taxon-undergraduate-recruitment.html).
