@@ -37,7 +37,7 @@ npm test
 ```
 
 ```bash
-# Start server for Problem 2.
-# Note that the http endpoint is invalid, so no rule names or messages will be displayed.
+# Start server for Problem 2
+# Note that the http endpoint is invalid, so no rule names or messages will be displayed
 npm run dev
 ```
